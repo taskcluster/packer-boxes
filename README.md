@@ -28,7 +28,6 @@ complex logic do it in bash (or whatever your using on the vm)
 
 ```sh
 #!/bin/bash -vex
-
 # (v)erbose and (e)xit on failure are most important things here but (x)
 # also shows the actual value on each line (with variables expanded)
 
@@ -36,8 +35,12 @@ do_stuff_to_get_nodejs
 
 # this will fail horribly if node is not present
 node -v
-````
+```
 
 ## Deployment to S3
 
-XXX TODO
+The [aws cli](http://docs.aws.amazon.com/cli/latest/reference/index.html) must
+be installed. If publishing a new version the number in the `VERSION`
+file should be bumped. Then run `make publish` assuming your aws
+credentials are valid you should begin to see upload status (though it
+takes a long while).
