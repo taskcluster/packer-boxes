@@ -1,0 +1,31 @@
+{
+  "description": "Task cluster development vagrant box",
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "dev_vagrant/scripts/node.sh",
+        "dev_vagrant/scripts/docker.sh"
+      ]
+    }
+  ],
+  "builders": [
+    {
+      "type": "virtualbox-ovf",
+      "source_path": "boxes/base/packer-virtualbox-iso.ovf",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "30s",
+      "shutdown_command": "echo 'packer' | sudo -S shutdown -P now",
+      "output_directory": "boxes/dev_vagrant"
+    }
+  ],
+
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "output": "boxes/dev_vagrant.box"
+    }
+  ]
+}
+

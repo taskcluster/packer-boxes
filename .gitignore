@@ -1,2 +1,5 @@
 /.DS_Store
 /packer_cache/
+/boxes/base
+/boxes/vagrant.box
+/boxes/vagrant/
