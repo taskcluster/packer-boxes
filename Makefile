@@ -12,7 +12,7 @@ boxes/dev_vagrant.box: boxes/dev_base
 clean:
 	rm -Rf boxes/dev_base boxes/dev_vagrant
 
-.PHONY:
+.PHONY: publish
 publish: publish_dev_vagrant
 
 .PHONY: publish_dev_vagrant
