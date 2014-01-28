@@ -5,14 +5,16 @@
       "type": "shell",
       "scripts": [
         "dev_vagrant/scripts/node.sh",
-        "dev_vagrant/scripts/docker.sh"
+        "dev_vagrant/scripts/docker.sh",
+        "dev_vagrant/scripts/postgres.sh",
+        "dev_vagrant/scripts/rabbitmq.sh"
       ]
     }
   ],
   "builders": [
     {
       "type": "virtualbox-ovf",
-      "source_path": "boxes/base/packer-virtualbox-iso.ovf",
+      "source_path": "boxes/dev_base/packer-virtualbox-iso.ovf",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "30s",
