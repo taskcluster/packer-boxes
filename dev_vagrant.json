@@ -5,7 +5,9 @@
       "type": "shell",
       "scripts": [
         "dev_vagrant/scripts/node.sh",
-        "dev_vagrant/scripts/docker.sh"
+        "dev_vagrant/scripts/docker.sh",
+        "dev_vagrant/scripts/postgres.sh",
+        "dev_vagrant/scripts/rabbitmq.sh"
       ]
     }
   ],
