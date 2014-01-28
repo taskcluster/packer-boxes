@@ -14,7 +14,7 @@
   "builders": [
     {
       "type": "virtualbox-ovf",
-      "source_path": "boxes/base/packer-virtualbox-iso.ovf",
+      "source_path": "boxes/dev_base/packer-virtualbox-iso.ovf",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_wait_timeout": "30s",
