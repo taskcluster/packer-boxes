@@ -1,2 +1,2 @@
 #! /bin/bash -xev
-apt-get install -y -q rabbitmq-server
+sudo apt-get install -y -q rabbitmq-server
