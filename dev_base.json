@@ -2,6 +2,18 @@
   "description": "Ubuntu 13.10 x86 base image for vagrant",
   "provisioners": [
     {
+      "only": ["amazon-ebs"],
+      "type": "shell",
+      "scripts": [
+        "dev_base/scripts/ec2.sh"
+      ],
+      "override": {
+        "virtualbox-iso": {
+          "execute_command": "echo 'vagrant' | sudo -S sh '{{ .Path }}'"
+        }
+      }
+    },
+    {
       "type": "shell",
       "scripts": [
         "dev_base/scripts/packages.sh",

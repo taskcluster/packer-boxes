@@ -4,8 +4,9 @@
     {
       "type": "shell",
       "scripts": [
-        "dev_vagrant/scripts/node.sh",
         "dev_vagrant/scripts/docker.sh",
+        "dev_vagrant/scripts/node.sh",
+        "dev_vagrant/scripts/python.sh",
         "dev_vagrant/scripts/postgres.sh",
         "dev_vagrant/scripts/rabbitmq.sh"
       ]
@@ -25,17 +26,21 @@
       "type": "amazon-ebs",
       "region": "us-west-2",
       "source_ami": "ami-62e78652",
-      "instance_type": "t1.micro",
+      "instance_type": "m3.large",
       "ssh_username": "ubuntu",
-      "ami_name": "testcluster-ubuntu-dev"
+      "ami_name": "testcluster-ubuntu-dev {{timestamp}}",
+      "tags": {
+        "OS_Version": "Ubuntu",
+        "Release": "Latest"
+      }
     }
   ],
 
   "post-processors": [
     {
       "type": "vagrant",
-      "output": "boxes/dev_vagrant.box"
+      "output": "boxes/dev_vagrant.box",
+      "keep_input_artifact": true
     }
   ]
 }
-
